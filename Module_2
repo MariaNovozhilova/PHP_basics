@@ -1,0 +1,83 @@
+<?php
+
+// условные конструкции
+
+$userAge = rand(15, 20);
+
+echo "Возраст пользователя: $userAge" . PHP_EOL;
+
+if ($userAge >= 18) {
+    echo 'Можно официально работать.' . PHP_EOL;
+} else { 
+    echo 'Официльное трудоустроиться нельзя.' . PHP_EOL;}
+
+echo PHP_EOL;
+
+$keyPressedCode = rand(37, 40);
+
+echo "Код символа: $keyPressedCode" . PHP_EOL;
+
+if ($keyPressedCode === 37) {
+    echo 'Go left' . PHP_EOL;
+} elseif ($keyPressedCode === 38) {
+    echo 'Go up'. PHP_EOL;
+} elseif ($keyPressedCode === 39) {
+    echo 'Go right'. PHP_EOL;
+} elseif ($keyPressedCode === 40) {
+    echo 'Go down'. PHP_EOL;
+}
+
+// тернарные операторы
+
+$orderAmount = rand(1950, 2050);
+
+echo 'Order amount: ' . $orderAmount . PHP_EOL;
+
+// if ($orderAmount >= 2000) {
+//     $deliveryCharge = 0;
+// } else {
+//     $deliveryCharge = 300;
+// }
+
+$deliveryCharge = $orderAmount >= 2000 ? 0 : 300;
+
+$finalAmount = $orderAmount + $deliveryCharge;  
+echo 'Final Order Amount: '. $finalAmount . PHP_EOL;
+
+
+echo PHP_EOL;
+
+// сокращенный тернарный оператор
+
+$userName = '';
+$displayUserName = $userName ?: 'Name not stated';
+
+// the same as $displayUserName = $userName ? $userName : 'Name not stated';
+
+echo $displayUserName . PHP_EOL;
+
+// сокращенный тернарный оператор для проверки существования
+
+$value = $undefinedVariable ?? 'variable not stated';
+
+// the same as $value = isset($undefinedVariable) ? $undefinedVariable: 'variable not stated';
+
+echo $value . PHP_EOL;
+
+
+// correct usage of ternary_conditions.php
+
+var_dump($value > 0 ? 'больше' : 'меньше');
+
+$showProfileLink = $value > 0;
+
+// пример неправильного использования тернарного оператора
+$value > 0 ? var_dump('больше') : var_dump('меньше');
+
+// пример лишнего использования тернарного оператора
+$showProfileLink = $value > 0 ? true : false;
+
+
+// logical conditions
+
+
